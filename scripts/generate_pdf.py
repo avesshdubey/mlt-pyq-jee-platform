@@ -167,21 +167,22 @@ def build_pdf():
         alignment=1,
         spaceAfter=4
     )))
-    story.append(Paragraph("Machine Learning Techniques (MLT)", title_style))
-    story.append(Paragraph("Past Year Question Bank (44 Exam Sessions) — Official Categorized Syllabus Edition", subtitle_style))
-    story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#0284c7"), spaceAfter=14))
-    
     # Executive Summary Card Table
     total_q = len(questions)
+    total_papers = len(set(p for q in questions for p in q.get('source_papers', [])))
     w1_count = sum(1 for q in questions if 'Week 1' in q['week'])
     w2_count = sum(1 for q in questions if 'Week 2' in q['week'])
     w3_count = sum(1 for q in questions if 'Week 3' in q['week'])
     w4_count = sum(1 for q in questions if 'Week 4' in q['week'])
     
+    story.append(Paragraph("Machine Learning Techniques (MLT)", title_style))
+    story.append(Paragraph(f"Past Year Question Bank ({total_papers} Exam Sessions) — Official Categorized Syllabus Edition", subtitle_style))
+    story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#0284c7"), spaceAfter=14))
+    
     summary_data = [
         [
             Paragraph(f"<b>Total Unique Questions:</b> {total_q}", styles['Normal']),
-            Paragraph("<b>Exam Sessions Covered:</b> 44 Papers", styles['Normal']),
+            Paragraph(f"<b>Exam Sessions Covered:</b> {total_papers} Papers", styles['Normal']),
             Paragraph("<b>Format:</b> MCQ, MSQ, NAT / SA", styles['Normal'])
         ],
         [

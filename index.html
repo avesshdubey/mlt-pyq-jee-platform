@@ -120,13 +120,14 @@
         <!-- SUB-BAR: Section Selector & Timer -->
         <div class="sub-bar">
             <div class="sections-nav" id="sectionTabs">
-                <button class="sec-tab active" data-week="ALL">All Weeks (462)</button>
-                <button class="sec-tab" data-week="Week 1">Week 1: Introduction & PCA (343)</button>
-                <button class="sec-tab" data-week="Week 2">Week 2: Kernel PCA (8)</button>
-                <button class="sec-tab" data-week="Week 3">Week 3: Clustering (K-means) (72)</button>
-                <button class="sec-tab" data-week="Week 4">Week 4: Estimation & GMM (39)</button>
+                <button class="sec-tab active" data-week="ALL">All Weeks (426)</button>
+                <button class="sec-tab" data-week="Week 1">Week 1: Introduction & PCA (234)</button>
+                <button class="sec-tab" data-week="Week 2">Week 2: Kernel PCA (55)</button>
+                <button class="sec-tab" data-week="Week 3">Week 3: Clustering (K-means) (68)</button>
+                <button class="sec-tab" data-week="Week 4">Week 4: Estimation & GMM (69)</button>
             </div>
             <div class="timer-box">
+                <button class="btn btn-random-practice" id="btnQuickRandom" title="Jump to a random question in this section">🎲 Random Practice</button>
                 <span class="timer-label">Time Remaining:</span>
                 <span class="timer-clock" id="timerDisplay">180:00</span>
                 <button class="timer-btn" id="pauseTimerBtn" title="Pause / Resume Timer">⏸</button>
@@ -146,6 +147,7 @@
                     <div class="q-marking-scheme">
                         <span class="mark-pos" id="markPosDisplay">Marks for correct: +3</span>
                         <span class="mark-neg" id="markNegDisplay">Negative marks: 0</span>
+                        <button class="action-link-btn btn-random-meta" id="btnMetaRandom" title="Jump to next random question">🎲 Random</button>
                         <button class="action-link-btn" id="viewQPBtn">Question Paper</button>
                         <button class="action-link-btn" id="viewInstBtn">Instructions</button>
                     </div>
@@ -168,6 +170,7 @@
                     <div class="footer-left">
                         <button class="btn btn-purple" id="btnMarkReviewNext">Mark for Review & Next</button>
                         <button class="btn btn-default" id="btnClearResponse">Clear Response</button>
+                        <button class="btn btn-default btn-random-footer" id="btnFooterRandom" title="Solve a random question">🎲 Random Question</button>
                     </div>
                     <div class="footer-right">
                         <button class="btn btn-default" id="btnPrevious">&laquo; Previous</button>
@@ -184,7 +187,7 @@
                         <div class="legend-item"><span class="badge badge-not-answered" id="countNotAnswered">0</span> Not Answered</div>
                     </div>
                     <div class="legend-row">
-                        <div class="legend-item"><span class="badge badge-not-visited" id="countNotVisited">462</span> Not Visited</div>
+                        <div class="legend-item"><span class="badge badge-not-visited" id="countNotVisited">426</span> Not Visited</div>
                         <div class="legend-item"><span class="badge badge-marked" id="countMarked">0</span> Marked for Review</div>
                     </div>
                     <div class="legend-row full">
@@ -193,15 +196,18 @@
                 </div>
 
                 <div class="palette-subfilter">
-                    <label for="subtopicFilterSelect">Filter Subtopic:</label>
+                    <div class="subfilter-header">
+                        <label for="subtopicFilterSelect">Revise Subtopic:</label>
+                        <button class="btn-text-link" id="btnPaletteRandom" title="Pick random question from selected subtopic">🎲 Pick Random</button>
+                    </div>
                     <select id="subtopicFilterSelect">
-                        <option value="ALL">All Subtopics</option>
+                        <option value="ALL">All Subtopics (20 Categories)</option>
                     </select>
                 </div>
 
                 <div class="palette-header">
                     <h3>Question Palette</h3>
-                    <span class="active-sec-label" id="paletteSecLabel">All Questions (462)</span>
+                    <span class="active-sec-label" id="paletteSecLabel">All Questions (426)</span>
                 </div>
 
                 <div class="palette-grid-scroll">
@@ -262,7 +268,7 @@
             <div class="admin-kpi-card">
                 <div class="kpi-icon">📚</div>
                 <div class="kpi-data">
-                    <span class="kpi-num" id="kpiTotalQuestions">462</span>
+                    <span class="kpi-num" id="kpiTotalQuestions">426</span>
                     <span class="kpi-title">Question Repository</span>
                 </div>
             </div>
@@ -272,7 +278,7 @@
         <div class="admin-nav-tabs">
             <button class="admin-nav-tab active" data-tab="adminTabUsers">User Management</button>
             <button class="admin-nav-tab" data-tab="adminTabAttempts">Test Submissions & Live Feed</button>
-            <button class="admin-nav-tab" data-tab="adminTabQuestions">Question Bank (462 Qs)</button>
+            <button class="admin-nav-tab" data-tab="adminTabQuestions">Question Bank (426 Qs)</button>
             <button class="admin-nav-tab" data-tab="adminTabAnalytics">Syllabus Breakdown</button>
         </div>
 
@@ -371,7 +377,7 @@
         <div class="admin-tab-content" id="adminTabAnalytics" style="display: none;">
             <div class="analytics-card">
                 <h3>Syllabus Distribution Across Question Repository</h3>
-                <p>Weightage breakdown across all 462 unique questions extracted from past year exam papers.</p>
+                <p>Weightage breakdown across all 426 unique questions extracted from past year exam papers.</p>
                 <div id="adminSyllabusBarsContainer" class="syllabus-bars-container"></div>
             </div>
         </div>

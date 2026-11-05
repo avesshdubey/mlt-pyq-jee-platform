@@ -38,3 +38,15 @@
   - Write test suite `tests/test_platform.py` verifying question schema, PDF integrity, image resolution, and application assets.
   - Run CodeRabbit code review audit (`coderabbit review --agent`) and fix any flagged issues.
   - Commit atomic changes and auto-push upstream to GitHub remote.
+
+- [x] **Task 7: Comprehensive 46-Paper Audit, WinRT OCR Text Recovery, 20 Granular Subcategories, Random Practice Mode & CodeRabbit Fixes**
+  - Re-audited all 69 PDFs in `C:\Users\avesh\Desktop\PYQS`, identifying and unlocking legacy TCS iON format papers `QPG1` and `QPG2` (questions 78–99).
+  - Filtered out all confirmation prompts and instruction blocks (e.g. `MLT_038`) and empty records.
+  - Converted mislabelled numerical questions with empty options to proper `SA` type and extracted verified numerical values.
+  - Implemented normalized stem and answer key cross-session deduplication, merging slot duplicates into single questions with multi-paper citation history, establishing the true verified count of 426 unique examination questions across 45 exam sessions.
+  - Deployed hardware-accelerated Windows WinRT OCR to recover question stems for image-rendered math formulas and equations without altering high-fidelity visual cards.
+  - Decomposed 4 weeks into 20 granular pedagogical subcategories with robust priority classification (Week 1: 234 Qs, Week 2: 55 Qs, Week 3: 68 Qs, Week 4: 69 Qs).
+  - Added "🎲 Random Question" / "Quick Random Practice" modes across sub-bar, question meta bar, question palette, and footer navigation with review mark preservation.
+  - Re-compiled 28.16 MB publication-ready categorized PDF (`mlt_questions_categorized.pdf`) with 426 questions and updated running headers.
+  - Addressed all 8 CodeRabbit review findings: legacy section boundary handling, position-based header search, word-boundary EM matching, subtopic category synchronization, and question schema validation tests.
+  - Updated all test suites, passed `test_platform.py` (6/6 tests passing), and auto-pushed to GitHub remote.

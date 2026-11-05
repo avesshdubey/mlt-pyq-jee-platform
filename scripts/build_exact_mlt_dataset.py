@@ -19,111 +19,222 @@ os.makedirs(CARDS_DIR, exist_ok=True)
 # 4-Week Taxonomy Mapping for Machine Learning Techniques (MLT)
 CATEGORIES = {
     "Week 1: Introduction; Unsupervised Learning - Representation learning - PCA": [
-        ("PCA Fundamentals & Projection", [
-            "pca", "principal component", "principal components", "first principal", "second principal", 
-            "fourth principal", "top principal", "projection", "subspace", "centered dataset", "centering", 
-            "data-point", "data point", "dimension reduction", "dimensionality reduction"
+        ("1.1 Representation Learning Basics & Dimensionality Reduction", [
+            "representation learning", "unsupervised learning", "dimensionality reduction", 
+            "dimension reduction", "curse of dimensionality", "manifold", "feature space", 
+            "high dimensional", "input space", "intrinsic dimension", "compression", "encoder",
+            "feature vector", "polynomial transformation", "alphabet", "models fits the data best", "visual inspection", "pca"
         ]),
-        ("Covariance Matrix & Eigen-decomposition", [
-            "covariance matrix", "sample covariance", "eigenvalue", "eigenvalues", "eigenvector", "eigenvectors", 
-            "symmetric", "positive semi-definite", "spectral theorem", "trace of covariance", "diagonal",
-            "scatter matrix", "data-matrix"
+        ("1.2 Model Evaluation Metrics & Classification Diagnostics", [
+            "precision", "recall", "f-1 score", "f1 score", "accuracy", "confusion matrix", 
+            "true positive", "false positive", "true negative", "false negative", "classification problem", 
+            "multi label", "single label", "binary class", "multi-label", "multi-class"
         ]),
-        ("Reconstruction Error & Variance Captured", [
+        ("1.3 Regularization, Loss Functions & Model Fitting", [
+            "ridge loss", "lasso loss", "regularization", "linear regression model", "perceptron", 
+            "gradient descent", "loss value", "squared error", "mean squared error", "model perfectly fits", 
+            "linear regression", "ridge regression", "regularization parameter", "least squares"
+        ]),
+        ("1.4 Data Centering, Preprocessing & Covariance Matrix", [
+            "covariance matrix", "sample covariance", "centered", "centering", "mean vector", 
+            "scatter matrix", "positive semi-definite", "symmetric matrix", "trace of covariance", 
+            "data-matrix", "centering matrix", "centered dataset", "empirical covariance"
+        ]),
+        ("1.5 PCA Optimization Objective & Max-Variance Formulation", [
+            "maximum variance", "max variance", "rayleigh quotient", "lagrangian", "unit norm", 
+            "constrained optimization", "direction of maximum variance", "variance along", "pca objective",
+            "variance of the projected", "maximize the variance"
+        ]),
+        ("1.6 Eigen-Decomposition & Principal Directions", [
+            "eigenvalue", "eigenvalues", "eigenvector", "eigenvectors", "spectral theorem", 
+            "principal direction", "principal directions", "top principal", "orthogonal directions", 
+            "first principal direction", "second principal component", "first principal", "second principal", 
+            "third principal", "fourth principal", "leading principal", "spectral decomposition", "diagonalization"
+        ]),
+        ("1.7 Variance Explained, Scree Plots & Component Selection", [
+            "variance captured", "total variance", "explained variance", "fraction of variance", 
+            "proportion of variance", "scree plot", "retained variance", "sum of eigenvalues", 
+            "percentage of variance", "variance ratio", "eigenvalue spectrum"
+        ]),
+        ("1.8 Low-Dimensional Projections & Coordinates", [
+            "projection", "projected", "projecting", "subspace", "projection matrix", 
+            "low-dimensional", "coordinates", "w^t x", "latent coordinates", "1d projection", 
+            "2d projection", "affine subspace", "orthogonal projection", "project points", "projecting onto"
+        ]),
+        ("1.9 Reconstruction & Reconstruction Error Calculation", [
             "reconstruction", "reconstructed", "reconstruction error", "residue", "zero residue", 
-            "variance captured", "total variance", "explained variance", "squared error"
-        ]),
-        ("Representation Learning & Evaluation Metrics", [
-            "representation learning", "unsupervised learning", "accuracy", "precision", "recall", 
-            "f-1 score", "f1 score", "ridge loss", "lasso loss", "regularization", "confusion matrix", 
-            "polynomial transformation", "feature vector", "prediction", "loss value"
+            "squared error", "reconstruction formula", "loss of information", "distortion error", 
+            "norm of residue", "best rank", "squared reconstruction error", "minimum reconstruction"
         ])
     ],
     "Week 2: Unsupervised Learning - Representation learning - Kernel PCA": [
-        ("Kernel Trick & Kernel Functions", [
-            "kernel trick", "gaussian kernel", "rbf kernel", "radial basis", "polynomial kernel", 
-            "linear kernel", "sigmoid kernel", "mercer", "positive definite kernel", "kernel function", 
-            "valid kernel", "valid  kernel"
+        ("2.1 Non-linear Feature Mappings & Kernel Trick", [
+            "kernel trick", "non-linear", "nonlinear", "feature map", "phi(x)", "\\phi", 
+            "mapping", "inner product in feature space", "distance in feature space", "higher dimension"
         ]),
-        ("Gram Matrix & Kernel Evaluation", [
+        ("2.2 Mercer Kernels & Kernel Types (RBF, Polynomial)", [
+            "mercer", "positive definite kernel", "kernel function", "rbf kernel", "gaussian kernel", 
+            "radial basis", "polynomial kernel", "linear kernel", "sigmoid kernel", "valid kernel", 
+            "kernel evaluation"
+        ]),
+        ("2.3 Gram Matrix & Centering in Feature Space", [
             "gram matrix", "kernel matrix", "k(x", "k(x,", "centering the kernel", "centering kernel", 
-            "inner product in feature space", "distance in feature space"
+            "h k h", "centered kernel matrix", "psd matrix"
         ]),
-        ("Kernel PCA Formulation & Dual Space", [
-            "kernel pca", "kpca", "non-linear pca", "dual formulation", "feature map", "phi(x)", "\\phi", 
-            "eigenvalue problem in kernel space", "alpha"
+        ("2.4 Kernel PCA Dual Eigenvalue Formulations", [
+            "kernel pca", "kpca", "dual formulation", "dual space", "alpha", 
+            "eigenvalue problem in kernel space", "normalization condition", "eigenvector in feature space"
+        ]),
+        ("2.5 KPCA Projections & Pre-image Problem", [
+            "pre-image", "pre image", "projection onto kernel", "kpca projection", "evaluating non-linear"
         ])
     ],
     "Week 3: Unsupervised Learning - Clustering - K-means/Kernel K-means": [
-        ("K-means Objective & Convergence", [
-            "k-means", "kmeans", "clustering", "cluster", "clusters", "distortion", "distortion measure", 
-            "inertia", "objective function", "convergence", "local minimum", "lloyd"
+        ("3.1 Clustering Formulations & Unsupervised Grouping", [
+            "clustering", "clusters", "cluster", "grouping", "inter-cluster", "intra-cluster", 
+            "unsupervised classification", "partitioning", "distance measure"
         ]),
-        ("Cluster Centers & Distance Metrics", [
-            "cluster center", "cluster centers", "cluster mean", "cluster means", "centroid", "centroids", 
-            "voronoi", "voronoi partition", "euclidean distance", "assignment step", "update step", 
-            "cluster assignment", "clustering problem"
+        ("3.2 K-Means Distortion Objective & Mathematical Properties", [
+            "distortion", "distortion measure", "objective function", "sse", "sum of squared error", 
+            "inertia", "r_nk", "indicator variable", "cluster objective"
         ]),
-        ("Initialization & K-means++", [
+        ("3.3 Lloyd's Algorithm: Assignment & Centroid Updates", [
+            "lloyd", "assignment step", "update step", "centroid update", "mean vector", 
+            "closest centroid", "iteration", "iterative", "cluster center", "centroid", "centroids"
+        ]),
+        ("3.4 Initialization Sensitivity & K-Means++ Algorithm", [
             "initialization", "initialize", "k-means++", "kmeans++", "sensitivity to initialization", 
-            "seeding", "random initialization"
+            "seeding", "d^2 weighting", "random initialization", "local minimum", "local minima"
         ]),
-        ("Kernel K-means & Non-linear Clustering", [
-            "kernel k-means", "kernel kmeans", "non-convex", "concentric", "clustering in feature space"
+        ("3.5 Voronoi Partitions & Geometric Cluster Boundaries", [
+            "voronoi", "voronoi partition", "voronoi diagram", "convex", "bisector", 
+            "decision boundary", "spherical clusters", "hyperplane"
+        ]),
+        ("3.6 Model Selection, Silhouette & Elbow Method", [
+            "elbow method", "elbow curve", "silhouette", "silhouette score", "choosing k", 
+            "optimal number of clusters", "cluster validation", "gap statistic"
+        ]),
+        ("3.7 Kernel K-Means & Non-Convex Clustering", [
+            "kernel k-means", "kernel kmeans", "non-convex", "concentric", "clustering in feature space", 
+            "kernel clustering", "spectral clustering"
         ])
     ],
     "Week 4: Unsupervised Learning - Estimation - Recap of MLE + Bayesian estimation, Gaussian Mixture Model - EM algorithm": [
-        ("Maximum Likelihood Estimation (MLE)", [
+        ("4.1 Likelihood Formulation & Maximum Likelihood (MLE)", [
             "mle", "maximum likelihood", "log-likelihood", "likelihood function", "score function", 
-            "estimator", "unbiased", "consistency", "poisson rate", "bernoulli parameter", "normal distribution"
+            "estimator", "unbiased", "consistency", "poisson", "bernoulli", "normal distribution", 
+            "parameter estimation", "likelihood of data"
         ]),
-        ("Bayesian Estimation & Priors", [
-            "bayesian", "prior", "priors", "posterior", "posterior mean", "beta(", "dirichlet", 
-            "conjugate", "conjugate prior", "map", "maximum a posteriori", "loss function", "bayes risk"
+        ("4.2 Bayesian Estimation, Priors & MAP", [
+            "bayesian", "prior", "posterior", "posterior mean", "beta(", "dirichlet", 
+            "conjugate prior", "map", "maximum a posteriori", "bayes risk", 
+            "bayesian inference"
         ]),
-        ("Gaussian Mixture Models (GMM)", [
-            "gaussian mixture", "gmm", "mixture model", "mixture weights", "component density", 
-            "latent variable", "latent variables", "mixture components", "marginal likelihood"
+        ("4.3 Latent Variable Models & Mixture Modeling", [
+            "latent variable", "latent variables", "mixture model", "mixture weights", 
+            "mixing coefficients", "mixture density", "marginal distribution", "incomplete data"
         ]),
-        ("Expectation-Maximization (EM) Algorithm", [
-            "em algorithm", "expectation-maximization", "e-step", "m-step", "responsibilities", 
-            "responsibility", "jensen", "lower bound", "elbo", "incomplete data"
+        ("4.4 Gaussian Mixture Models (GMM) Parameters & Structure", [
+            "gaussian mixture", "gmm", "component density", "covariance matrix", 
+            "spherical covariance", "diagonal covariance", "multivariate gaussian", "mixture components"
+        ]),
+        ("4.5 EM Algorithm: E-Step (Responsibilities / Posterior)", [
+            "e-step", "expectation step", "responsibilities", "responsibility", 
+            "posterior probability of component", "soft assignment", "gamma"
+        ]),
+        ("4.6 EM Algorithm: M-Step (Parameter Updates)", [
+            "m-step", "maximization step", "update means", "update covariances", 
+            "mixing weights update", "n_k", "weighted mean"
+        ]),
+        ("4.7 EM Convergence & Evidence Lower Bound (ELBO)", [
+            "em algorithm", "expectation-maximization", "elbo", "jensen", "lower bound", 
+            "monotonicity", "convergence of em", "local maximum of likelihood"
         ])
     ]
 }
 
 def classify_question(text):
     text_lower = text.lower()
-    best_week = None
-    best_subtopic = None
-    best_score = -1
     
-    for week, subtopics in CATEGORIES.items():
-        for subtopic, kw_list in subtopics:
-            score = 0
-            for kw in kw_list:
-                kw_l = kw.lower()
-                if kw_l.startswith("\\"):
-                    if kw_l in text_lower:
-                        score += 4
-                elif re.search(r'\b' + re.escape(kw_l) + r'\b', text_lower):
-                    score += 3 + len(kw_l.split())
-                elif kw_l in text_lower:
-                    score += 1
-            if score > best_score:
-                best_score = score
-                best_week = week
-                best_subtopic = subtopic
-                
-    if best_score <= 0:
-        if "kernel" in text_lower or "gram" in text_lower or "rbf" in text_lower or "phi" in text_lower:
-            return "Week 2: Unsupervised Learning - Representation learning - Kernel PCA", "Kernel Trick & Kernel Functions"
-        elif "cluster" in text_lower or "k-means" in text_lower or "mean" in text_lower:
-            return "Week 3: Unsupervised Learning - Clustering - K-means/Kernel K-means", "K-means Objective & Convergence"
-        elif "mle" in text_lower or "likelihood" in text_lower or "bayesian" in text_lower or "gmm" in text_lower or "em" in text_lower:
-            return "Week 4: Unsupervised Learning - Estimation - Recap of MLE + Bayesian estimation, Gaussian Mixture Model - EM algorithm", "Maximum Likelihood Estimation (MLE)"
+    # Week 4 checks
+    has_w4 = bool(re.search(r'\b(mle|likelihood|bayesian|gmm|gaussian mixture|prior|posterior|elbo|expectation-maximization|responsibilit|latent variable)\b', text_lower)) or bool(re.search(r'\b(em algorithm|e-step|m-step)\b', text_lower))
+    # Week 3 checks
+    has_w3 = bool(re.search(r'\b(cluster|clustering|clusters|k-means|kmeans|k-means\+\+|lloyd|centroids?|voronoi|silhouette|elbow method)\b', text_lower))
+    # Week 2 checks
+    has_w2 = bool(re.search(r'\b(kernel|kernel trick|kpca|kernel pca|gram matrix|rbf kernel|gaussian kernel|polynomial kernel|mercer|feature map)\b', text_lower))
+    # Week 1 checks
+    has_w1 = bool(re.search(r'\b(pca|principal component|principal components|principal direction|covariance matrix|sample covariance|reconstruction error|rayleigh quotient|spectral theorem|scree plot|variance explained|eigenvalue|eigenvalues|eigenvector|eigenvectors|dimensionality reduction|representation learning|linear regression|perceptron|least squares|ridge loss|gradient descent|precision|recall|f1 score|confusion matrix)\b', text_lower))
+    
+    # Priority resolution
+    if has_w3 and not (has_w2 and 'kernel k-means' not in text_lower) and not ('pca' in text_lower and not 'cluster' in text_lower):
+        w = 'Week 3: Unsupervised Learning - Clustering - K-means/Kernel K-means'
+        if 'lloyd' in text_lower or 'assignment' in text_lower or 'centroid' in text_lower or 'center' in text_lower:
+            st = "3.3 Lloyd's Algorithm: Assignment & Centroid Updates"
+        elif 'k-means++' in text_lower or 'kmeans++' in text_lower or 'initialization' in text_lower or 'initialize' in text_lower:
+            st = "3.4 Initialization Sensitivity & K-Means++ Algorithm"
+        elif 'voronoi' in text_lower or 'partition' in text_lower or 'boundary' in text_lower:
+            st = "3.5 Voronoi Partitions & Geometric Cluster Boundaries"
+        elif 'distortion' in text_lower or 'objective' in text_lower or 'inertia' in text_lower or 'sse' in text_lower:
+            st = "3.2 K-Means Distortion Objective & Mathematical Properties"
+        elif 'kernel k-means' in text_lower or 'kernel kmeans' in text_lower:
+            st = "3.7 Kernel K-Means & Non-Convex Clustering"
+        elif 'elbow' in text_lower or 'silhouette' in text_lower:
+            st = "3.6 Model Selection, Silhouette & Elbow Method"
         else:
-            return "Week 1: Introduction; Unsupervised Learning - Representation learning - PCA", "PCA Fundamentals & Projection"
+            st = "3.1 Clustering Formulations & Unsupervised Grouping"
+        return w, st
+        
+    if has_w2:
+        w = 'Week 2: Unsupervised Learning - Representation learning - Kernel PCA'
+        if 'gram matrix' in text_lower or 'kernel matrix' in text_lower or 'h k h' in text_lower or 'centering' in text_lower:
+            st = "2.3 Gram Matrix & Centering in Feature Space"
+        elif 'mercer' in text_lower or 'rbf' in text_lower or 'polynomial kernel' in text_lower or 'gaussian kernel' in text_lower:
+            st = "2.2 Mercer Kernels & Kernel Types (RBF, Polynomial)"
+        elif 'dual' in text_lower or 'alpha' in text_lower:
+            st = "2.4 Kernel PCA Dual Eigenvalue Formulations"
+        elif 'pre-image' in text_lower or 'pre image' in text_lower:
+            st = "2.5 KPCA Projections & Pre-image Problem"
+        else:
+            st = "2.1 Non-linear Feature Mappings & Kernel Trick"
+        return w, st
+        
+    if has_w4:
+        w = 'Week 4: Unsupervised Learning - Estimation - Recap of MLE + Bayesian estimation, Gaussian Mixture Model - EM algorithm'
+        if 'bayesian' in text_lower or 'prior' in text_lower or 'posterior' in text_lower or 'map' in text_lower or 'beta' in text_lower:
+            st = "4.2 Bayesian Estimation, Priors & MAP"
+        elif 'e-step' in text_lower or 'responsibilit' in text_lower:
+            st = "4.5 EM Algorithm: E-Step (Responsibilities / Posterior)"
+        elif 'm-step' in text_lower:
+            st = "4.6 EM Algorithm: M-Step (Parameter Updates)"
+        elif 'elbo' in text_lower or 'lower bound' in text_lower or 'convergence' in text_lower or 'em algorithm' in text_lower:
+            st = "4.7 EM Convergence & Evidence Lower Bound (ELBO)"
+        elif 'mixture' in text_lower or 'gmm' in text_lower or 'gaussian mixture' in text_lower:
+            st = "4.4 Gaussian Mixture Models (GMM) Parameters & Structure"
+        elif 'latent' in text_lower:
+            st = "4.3 Latent Variable Models & Mixture Modeling"
+        else:
+            st = "4.1 Likelihood Formulation & Maximum Likelihood (MLE)"
+        return w, st
+        
+    # Week 1 Default / Fallback
+    w = 'Week 1: Introduction; Unsupervised Learning - Representation learning - PCA'
+    if 'reconstruction' in text_lower or 'residue' in text_lower:
+        st = "1.9 Reconstruction & Reconstruction Error Calculation"
+    elif 'eigenvalue' in text_lower or 'eigenvalues' in text_lower or 'eigenvector' in text_lower or 'eigenvectors' in text_lower or 'principal direction' in text_lower:
+        st = "1.6 Eigen-Decomposition & Principal Directions"
+    elif 'covariance' in text_lower or 'centered' in text_lower or 'centering' in text_lower or 'scatter' in text_lower:
+        st = "1.4 Data Centering, Preprocessing & Covariance Matrix"
+    elif 'variance' in text_lower or 'objective' in text_lower or 'rayleigh' in text_lower:
+        st = "1.5 PCA Optimization Objective & Max-Variance Formulation"
+    elif 'projection' in text_lower or 'coordinates' in text_lower or 'projected' in text_lower:
+        st = "1.8 Low-Dimensional Projections & Coordinates"
+    elif 'regularization' in text_lower or 'ridge' in text_lower or 'lasso' in text_lower or 'gradient descent' in text_lower or 'loss' in text_lower or 'perceptron' in text_lower or 'linear regression' in text_lower or 'fits the data' in text_lower:
+        st = "1.3 Regularization, Loss Functions & Model Fitting"
+    elif 'precision' in text_lower or 'recall' in text_lower or 'f1' in text_lower or 'confusion matrix' in text_lower or 'accuracy' in text_lower:
+        st = "1.2 Model Evaluation Metrics & Classification Diagnostics"
+    else:
+        st = "1.1 Representation Learning Basics & Dimensionality Reduction"
+    return w, st
             
     return best_week, best_subtopic
 
@@ -168,19 +279,27 @@ def find_mlt_boundaries(doc):
     y_start = 0
     end_p = total_pages - 1
     y_end = 999999
+    is_legacy = False
     
     for pno in range(total_pages):
         text = doc[pno].get_text()
-        if 'Section Id :' in text:
-            lines = [l.strip().replace('\xa0', '').strip() for l in text.splitlines() if l.strip().replace('\xa0', '').strip()]
-            for idx, line in enumerate(lines):
-                if line == 'Section Id :' and idx > 0:
-                    sec_name = lines[idx-1]
-                    if sec_name.upper() in ['MLT', 'MACHINE LEARNING TECHNIQUES'] or re.match(r'^(Section\s*:\s*)?MLT$', sec_name, re.IGNORECASE):
-                        start_p = pno
-                        sr = doc[pno].search_for('Section Id :')
-                        y_start = sr[0].y0 - 20 if sr else 0
-                        break
+        lines = [l.strip().replace('\xa0', '').strip() for l in text.splitlines() if l.strip().replace('\xa0', '').strip()]
+        for idx, line in enumerate(lines):
+            # Modern format
+            if line == 'Section Id :' and idx > 0:
+                sec_name = lines[idx-1]
+                if sec_name.upper() in ['MLT', 'MACHINE LEARNING TECHNIQUES'] or re.match(r'^(Section\s*:\s*)?MLT$', sec_name, re.IGNORECASE):
+                    start_p = pno
+                    sr = doc[pno].search_for('Section Id :')
+                    y_start = sr[0].y0 - 20 if sr else 0
+                    break
+            # Legacy format: MLT followed by Number of Questions
+            elif line.upper() == 'MLT' and idx + 1 < len(lines) and 'Number of Questions' in lines[idx+1]:
+                start_p = pno
+                sr = doc[pno].search_for('MLT')
+                y_start = sr[0].y0 - 10 if sr else 0
+                is_legacy = True
+                break
         if start_p is not None:
             break
             
@@ -189,16 +308,32 @@ def find_mlt_boundaries(doc):
         
     for pno in range(start_p, total_pages):
         text = doc[pno].get_text()
-        if 'Section Id :' in text:
-            lines = [l.strip().replace('\xa0', '').strip() for l in text.splitlines() if l.strip().replace('\xa0', '').strip()]
-            for idx, line in enumerate(lines):
+        lines = [l.strip().replace('\xa0', '').strip() for l in text.splitlines() if l.strip().replace('\xa0', '').strip()]
+        for idx, line in enumerate(lines):
+            if not is_legacy:
                 if line == 'Section Id :' and idx > 0:
                     sec_name = lines[idx-1]
                     if sec_name.upper() not in ['MLT', 'MACHINE LEARNING TECHNIQUES']:
-                        if pno > start_p or (pno == start_p and idx > 10):
+                        sr = doc[pno].search_for('Section Id :')
+                        if pno == start_p:
+                            sr = [rect for rect in sr if rect.y0 > y_start + 100]
+                        y_sec = min((rect.y0 for rect in sr), default=0) - 10 if sr else 0
+                        if pno > start_p or (pno == start_p and y_sec > y_start + 100):
                             end_p = pno
-                            sr = doc[pno].search_for('Section Id :')
-                            y_end = sr[0].y0 - 20 if sr else 999999
+                            y_end = y_sec
+                            return start_p, y_start, end_p, y_end
+            else:
+                # In legacy papers (QPG1/QPG2), MLT ends when a new subject header appears (e.g. Java) with 'Number of Questions :'
+                if line == 'Number of Questions :' and (pno > start_p or (pno == start_p and idx > 3)):
+                    sec_name = lines[idx-1] if idx > 0 else ''
+                    if sec_name.upper() not in ['MLT', 'MACHINE LEARNING TECHNIQUES']:
+                        sr = doc[pno].search_for('Number of Questions :')
+                        if pno == start_p:
+                            sr = [rect for rect in sr if rect.y0 > y_start + 100]
+                        y_sec = min((rect.y0 for rect in sr), default=0) - 10 if sr else 0
+                        if pno > start_p or (pno == start_p and y_sec > y_start + 100):
+                            end_p = pno
+                            y_end = y_sec
                             return start_p, y_start, end_p, y_end
                             
     return start_p, y_start, total_pages - 1, 999999
@@ -283,7 +418,11 @@ def process_paper(pdf_path):
             else:
                 q_type = m_type.group(1)
                 
-            q_id = m_id.group(1) if m_id else f"QID-{q_num}"
+            if m_id:
+                q_id = m_id.group(1)
+            else:
+                base_clean = re.sub(r'[^A-Za-z0-9]', '_', paper_name.replace('.pdf', ''))
+                q_id = f"{base_clean}_Q{q_num}"
             
             # Marks check - filter confirmation question
             m_marks = re.search(r'Correct Marks\s*:\s*([0-9.]+)', header)

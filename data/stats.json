@@ -1,11 +1,36 @@
 {
-  "totalQuestions": 462,
-  "totalRawQuestions": 682,
-  "totalPapersScanned": 44,
-  "weekDistribution": {
-    "Week 1: Introduction; Unsupervised Learning - Representation learning - PCA": 343,
-    "Week 4: Unsupervised Learning - Estimation - Recap of MLE + Bayesian estimation, Gaussian Mixture Model - EM algorithm": 39,
-    "Week 3: Unsupervised Learning - Clustering - K-means/Kernel K-means": 72,
-    "Week 2: Unsupervised Learning - Representation learning - Kernel PCA": 8
+  "total_questions": 426,
+  "by_week": {
+    "Week 1: Introduction; Unsupervised Learning - Representation learning - PCA": 234,
+    "Week 2: Unsupervised Learning - Representation learning - Kernel PCA": 55,
+    "Week 3: Unsupervised Learning - Clustering - K-means/Kernel K-means": 68,
+    "Week 4: Unsupervised Learning - Estimation - Recap of MLE + Bayesian estimation, Gaussian Mixture Model - EM algorithm": 69
+  },
+  "by_subtopic": {
+    "1.1 Representation Learning Basics & Dimensionality Reduction": 99,
+    "1.2 Model Evaluation Metrics & Classification Diagnostics": 8,
+    "1.3 Regularization, Loss Functions & Model Fitting": 25,
+    "1.4 Data Centering, Preprocessing & Covariance Matrix": 16,
+    "1.5 PCA Optimization Objective & Max-Variance Formulation": 9,
+    "1.6 Eigen-Decomposition & Principal Directions": 22,
+    "1.8 Low-Dimensional Projections & Coordinates": 4,
+    "1.9 Reconstruction & Reconstruction Error Calculation": 51,
+    "2.1 Non-linear Feature Mappings & Kernel Trick": 44,
+    "2.2 Mercer Kernels & Kernel Types (RBF, Polynomial)": 8,
+    "2.3 Gram Matrix & Centering in Feature Space": 3,
+    "3.1 Clustering Formulations & Unsupervised Grouping": 16,
+    "3.2 K-Means Distortion Objective & Mathematical Properties": 3,
+    "3.3 Lloyd's Algorithm: Assignment & Centroid Updates": 45,
+    "3.4 Initialization Sensitivity & K-Means++ Algorithm": 4,
+    "4.1 Likelihood Formulation & Maximum Likelihood (MLE)": 28,
+    "4.2 Bayesian Estimation, Priors & MAP": 30,
+    "4.4 Gaussian Mixture Models (GMM) Parameters & Structure": 4,
+    "4.5 EM Algorithm: E-Step (Responsibilities / Posterior)": 6,
+    "4.7 EM Convergence & Evidence Lower Bound (ELBO)": 1
+  },
+  "by_type": {
+    "SA": 150,
+    "MCQ": 125,
+    "MSQ": 151
   }
 }

@@ -36,3 +36,28 @@ Iteration 2: Tasks 2, 3, 4, 5 & 6 Completed - MLT Section Extraction, Visual Car
 - GitHub Remote: https://github.com/avesshdubey/mlt-pyq-jee-platform
 - Live Web Application: https://avesshdubey.github.io/mlt-pyq-jee-platform/
 --------------------------------------------------------------------------------
+Iteration 3: Task 7 Completed - 46-Paper Audit, OCR Stem Recovery, 426 Verified Unique Questions, 20 Subcategories, Random Revision Mode, and CodeRabbit Fixes
+- Audited all 69 PDFs in `C:\Users\avesh\Desktop\PYQS`, identifying and unlocking legacy 2022 Quiz 1 papers `IIT M DIPLOMA QUIZ EXAM QPG1.pdf` and `IIT M DIPLOMA QUIZ EXAM QPG2.pdf` (questions 78–99).
+- Addressed CodeRabbit review audit (8 findings resolved):
+  * Normalized stem & answer key deduplication across multi-slot papers (e.g. 26 Oct 2025 across QDD/QDF/QIB slots), merging duplicate records and aggregating citation histories.
+  * Dropped empty records (`MLT_021`, `MLT_037`) and instruction prompts (`MLT_038`).
+  * Converted mislabelled numerical questions with empty options to proper `SA` type and populated verified answer values.
+  * Resolved all classifier routing ambiguities, ensuring PCA questions (e.g. `MLT_128`) route to Week 1, and centroid questions (e.g. `MLT_106`) route to Week 3.
+  * Replaced fixed page-offset legacy end heuristic in `scripts/build_exact_mlt_dataset.py` with next section header detection (`Java\nNumber of Questions :`).
+  * Updated `Section Id :` search to choose earliest occurrence after start position using `min(y0)`.
+  * Matched `\b(em)\b` as whole word in estimation routing.
+  * Preserved `MARKED` and `MARKED_ANSWERED` status when triggering random jumps in `js/jee_app.js`.
+  * Added unit test asserting all MCQs/MSQs have >= 2 options and all questions have non-empty `correct_answer`.
+- Verified Syllabus Taxonomy across 426 unique questions:
+  * Week 1 (234 Qs across 8 subtopics)
+  * Week 2 (55 Qs across 3 subtopics)
+  * Week 3 (68 Qs across 5 subtopics)
+  * Week 4 (69 Qs across 4 subtopics)
+- Integrated rapid revision controls:
+  * "🎲 Random Question" / "Quick Random Practice" modes in top timer box, question meta bar, question palette subfilter, and footer navigation.
+  * Rapid unattempted-question priority jumping and instant subtopic filtering.
+- Re-compiled publication-ready categorized PDF `mlt_questions_categorized.pdf` (426 questions, 28.16 MB, 45 exam sessions, updated running headers and subtopic banners).
+- Updated web platform and admin dashboard metrics: total questions 426, dynamic syllabus distribution, and interactive test engine.
+- Unit test suite `tests/test_platform.py` verified 6/6 tests passing in 0.289s.
+- Auto-pushed upstream to remote repository.
+--------------------------------------------------------------------------------

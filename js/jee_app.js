@@ -63,12 +63,16 @@
         qStemImage: document.getElementById('qStemImage'),
         qInputContainer: document.getElementById('qInputContainer'),
         
-        // Navigation Buttons
+        // Navigation & Random Question Buttons
         btnPrevious: document.getElementById('btnPrevious'),
         btnSaveNext: document.getElementById('btnSaveNext'),
         btnClearResponse: document.getElementById('btnClearResponse'),
         btnMarkReviewNext: document.getElementById('btnMarkReviewNext'),
         btnSubmitTest: document.getElementById('btnSubmitTest'),
+        btnQuickRandom: document.getElementById('btnQuickRandom'),
+        btnMetaRandom: document.getElementById('btnMetaRandom'),
+        btnFooterRandom: document.getElementById('btnFooterRandom'),
+        btnPaletteRandom: document.getElementById('btnPaletteRandom'),
 
         // Counters in Legend
         countAnswered: document.getElementById('countAnswered'),
@@ -686,6 +690,44 @@
         }
     }
 
+    // Random Question Handler for Rapid Revision
+    function handleRandomQuestion() {
+        if (currentQuestions.length === 0) return;
+        const curQ = currentQuestions[currentIndex];
+        const curSt = responses[curQ.id].status;
+        saveCurrentResponseState(curSt === 'MARKED' || curSt === 'MARKED_ANSWERED');
+
+        // Find unvisited or unanswered questions in the current filtered set first
+        const unattempted = [];
+        currentQuestions.forEach((q, idx) => {
+            const st = responses[q.id].status;
+            if (st === 'NOT_VISITED' || st === 'NOT_ANSWERED') {
+                if (idx !== currentIndex) {
+                    unattempted.push(idx);
+                }
+            }
+        });
+
+        let targetIndex;
+        if (unattempted.length > 0) {
+            targetIndex = unattempted[Math.floor(Math.random() * unattempted.length)];
+        } else if (currentQuestions.length > 1) {
+            const others = [];
+            for (let i = 0; i < currentQuestions.length; i++) {
+                if (i !== currentIndex) others.push(i);
+            }
+            targetIndex = others[Math.floor(Math.random() * others.length)];
+        } else {
+            targetIndex = 0;
+        }
+
+        currentIndex = targetIndex;
+        renderCurrentQuestion();
+        updatePaletteActiveState();
+        const scrollBody = document.getElementById('qScrollBody');
+        if (scrollBody) scrollBody.scrollTop = 0;
+    }
+
     // Modals
     function openQuestionPaperModal() {
         elements.qpModalContent.innerHTML = '';
@@ -766,12 +808,7 @@
     }
 
     function openSubmitModal() {
-        const weeks = [
-            "Week 1 - ML Foundations",
-            "Week 2 - Mathematical Foundations",
-            "Week 3 - Linear Algebra & Subspaces",
-            "Week 4 - Regression & Eigenvalues"
-        ];
+        const weeks = Array.from(new Set(allQuestions.map(q => q.week))).sort();
 
         elements.submitSummaryTbody.innerHTML = '';
         
@@ -1155,6 +1192,12 @@
         elements.btnMarkReviewNext.addEventListener('click', handleMarkReviewNext);
         elements.btnClearResponse.addEventListener('click', handleClearResponse);
         elements.btnPrevious.addEventListener('click', handlePrevious);
+
+        // Random Practice & Quick Revision Controls
+        if (elements.btnQuickRandom) elements.btnQuickRandom.addEventListener('click', handleRandomQuestion);
+        if (elements.btnMetaRandom) elements.btnMetaRandom.addEventListener('click', handleRandomQuestion);
+        if (elements.btnFooterRandom) elements.btnFooterRandom.addEventListener('click', handleRandomQuestion);
+        if (elements.btnPaletteRandom) elements.btnPaletteRandom.addEventListener('click', handleRandomQuestion);
 
         // Timer Pause/Resume
         elements.pauseTimerBtn.addEventListener('click', () => {

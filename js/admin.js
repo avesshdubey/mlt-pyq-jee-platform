@@ -136,7 +136,7 @@
 
             if (totalUsersElem) totalUsersElem.textContent = users.length;
             if (totalAttemptsElem) totalAttemptsElem.textContent = attempts.length;
-            if (qCountElem) qCountElem.textContent = questionsData.length || 462;
+            if (qCountElem) qCountElem.textContent = questionsData.length || 426;
 
             if (attempts.length > 0) {
                 const totalScoreSum = attempts.reduce((acc, a) => acc + (a.score || 0), 0);
@@ -301,12 +301,20 @@
             const container = document.getElementById('adminSyllabusBarsContainer');
             if (!container) return;
 
-            const total = questionsData.length || 462;
+            const total = questionsData.length || 426;
+            const weekCounts = { 'Week 1': 0, 'Week 2': 0, 'Week 3': 0, 'Week 4': 0 };
+            questionsData.forEach(q => {
+                if (q.week && q.week.startsWith('Week 1')) weekCounts['Week 1']++;
+                else if (q.week && q.week.startsWith('Week 2')) weekCounts['Week 2']++;
+                else if (q.week && q.week.startsWith('Week 3')) weekCounts['Week 3']++;
+                else if (q.week && q.week.startsWith('Week 4')) weekCounts['Week 4']++;
+            });
+
             const weeks = [
-                { name: "Week 1: Introduction & PCA", count: 343, icon: "🧠" },
-                { name: "Week 2: Kernel PCA", count: 8, icon: "📐" },
-                { name: "Week 3: Clustering - K-means", count: 72, icon: "🔢" },
-                { name: "Week 4: Estimation - MLE, Bayesian, GMM & EM", count: 39, icon: "📊" }
+                { name: "Week 1: Introduction & PCA", count: weekCounts['Week 1'] || 234, icon: "🧠" },
+                { name: "Week 2: Kernel PCA", count: weekCounts['Week 2'] || 55, icon: "📐" },
+                { name: "Week 3: Clustering - K-means", count: weekCounts['Week 3'] || 68, icon: "🔢" },
+                { name: "Week 4: Estimation - MLE, Bayesian, GMM & EM", count: weekCounts['Week 4'] || 69, icon: "📊" }
             ];
 
             container.innerHTML = '';
