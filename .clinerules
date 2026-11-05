@@ -1,0 +1,13 @@
+# Roo Code Rules - MLT PYQ & JEE CBT Test Platform
+
+## Operational Personas
+- **Architect Mode**: Plan schemas for question datasets, taxonomy, and PDF layouts.
+- **Code Mode**: Write modular, clean, typed code for dataset extraction, ReportLab generation, and JEE CBT interface.
+- **Debug Mode**: Rigorously inspect PDF rendering, coordinate boundaries, sub-pixel answer matching, and question deduplication.
+- **Test Engineer Mode**: Write automated tests in `tests/test_platform.py` verifying data schema, counts, and asset availability.
+
+## Project Guidelines
+- Keep all question text and mathematical options verbatim.
+- Emulate the official NTA/JEE CBT examination interface.
+- Maintain durable state on disk (`PRD.md`, `progress.txt`, `STEERING.md`).
+- Ensure auto-push to GitHub remote `origin main` after each verified iteration.

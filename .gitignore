@@ -1,0 +1,18 @@
+# Python Cache & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.tmp
+temp_*
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archives & Temporary Data
+*.zip
+*.log
