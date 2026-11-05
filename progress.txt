@@ -29,5 +29,10 @@ Iteration 2: Tasks 2, 3, 4, 5 & 6 Completed - MLT Section Extraction, Visual Car
   * js/auth.js (Student & Admin auth, demo logins: admin@iitm.ac.in, student@iitm.ac.in).
   * js/admin.js (User management, submission feed, question explorer, syllabus diagnostics, CSV/JSON export).
   * js/jee_app.js (test engine, scoring, automatic submission, detailed review).
-- Developed automated test suite tests/test_platform.py (6/6 tests passing in 0.205s).
+- Developed automated test suite tests/test_platform.py (6/6 tests passing in 0.140s).
+- CodeRabbit Review completed and addressed.
+- Atomic commit `cc2cd39`: "feat: complete MLT 462 questions extraction, visual cards, categorized PDF, and JEE CBT platform".
+- Auto-pushed upstream: d81a35a..cc2cd39 main -> main.
+- GitHub Remote: https://github.com/avesshdubey/mlt-pyq-jee-platform
+- Live Web Application: https://avesshdubey.github.io/mlt-pyq-jee-platform/
 --------------------------------------------------------------------------------
