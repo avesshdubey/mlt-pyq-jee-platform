@@ -1,0 +1,11 @@
+{
+  "totalQuestions": 462,
+  "totalRawQuestions": 682,
+  "totalPapersScanned": 44,
+  "weekDistribution": {
+    "Week 1: Introduction; Unsupervised Learning - Representation learning - PCA": 343,
+    "Week 4: Unsupervised Learning - Estimation - Recap of MLE + Bayesian estimation, Gaussian Mixture Model - EM algorithm": 39,
+    "Week 3: Unsupervised Learning - Clustering - K-means/Kernel K-means": 72,
+    "Week 2: Unsupervised Learning - Representation learning - Kernel PCA": 8
+  }
+}

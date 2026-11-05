@@ -14,3 +14,20 @@ Iteration 1: Task 1 Completed - Git & 4-Tier Setup Baseline (/addgit)
 - Enabled GitHub Pages at https://avesshdubey.github.io/mlt-pyq-jee-platform/
 - Configured upstream tracking (`main -> origin/main`).
 --------------------------------------------------------------------------------
+Iteration 2: Tasks 2, 3, 4, 5 & 6 Completed - MLT Section Extraction, Visual Card Cropping, Categorized PDF, and Interactive CBT Platform
+- Scanned all 67 candidate PDF papers in C:\Users\avesh\Desktop\PYQS; 100% of the 44 papers containing the official MLT section were identified and extracted (the remaining 23 papers were non-MLT subjects such as MLF, Math, English).
+- Filtered out 0-mark subject confirmation prompts.
+- Attached comprehension passages directly to respective subquestions.
+- Sub-pixel green checkmark raster matching extracted verified official answer keys for every question.
+- Extracted 682 raw questions and deduplicated to 462 unique questions.
+- Cropped 462 150-DPI visual cards with formulas, plots, matrices, and tables (assets/q_cards/card_*.jpg, total size 25.63 MB).
+- Exported questions dataset to data/questions.json, data/stats.json, and offline bundle data/questions_data.js.
+- Generated publication-ready categorized PDF mlt_questions_categorized.pdf (427 pages, 32.54 MB).
+- Built interactive JEE CBT Exam Web Application and Admin Control Panel:
+  * index.html (NTA/JEE test interface, section tabs, countdown timer, question palette, full question paper modal, scorecard review).
+  * css/jee_style.css (authentic NTA styling, responsive layout).
+  * js/auth.js (Student & Admin auth, demo logins: admin@iitm.ac.in, student@iitm.ac.in).
+  * js/admin.js (User management, submission feed, question explorer, syllabus diagnostics, CSV/JSON export).
+  * js/jee_app.js (test engine, scoring, automatic submission, detailed review).
+- Developed automated test suite tests/test_platform.py (6/6 tests passing in 0.205s).
+--------------------------------------------------------------------------------
