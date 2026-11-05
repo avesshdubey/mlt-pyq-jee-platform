@@ -5,3 +5,12 @@ Source PYQ Papers: C:\Users\avesh\Desktop\PYQS
 Git Remote: https://github.com/avesshdubey/mlt-pyq-jee-platform
 Stack: Python 3.13, PyMuPDF (fitz), ReportLab, HTML5, CSS3, JavaScript
 --------------------------------------------------------------------------------
+Iteration 1: Task 1 Completed - Git & 4-Tier Setup Baseline (/addgit)
+- Git repository initialized on `main` branch.
+- Configured `.gitignore` for Python, frontend assets, and large raw binaries.
+- Staged baseline 4-tier assets (`GOAL.md`, `PRD.md`, `progress.txt`, `STEERING.md`, `.clinerules`, `.nojekyll`).
+- Created baseline commit `068f083`.
+- Linked public remote GitHub repository: https://github.com/avesshdubey/mlt-pyq-jee-platform
+- Enabled GitHub Pages at https://avesshdubey.github.io/mlt-pyq-jee-platform/
+- Configured upstream tracking (`main -> origin/main`).
+--------------------------------------------------------------------------------
